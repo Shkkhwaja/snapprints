@@ -4,14 +4,12 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer class="bg-gradient-to-r from-slate-800 via-slate-600 to-slate-800 py-10 px-10 font-sans tracking-wide">
+    <footer class="bg-gradient-to-r from-slate-800 via-slate-600 to-slate-800 py-2 px-10 font-sans tracking-wide">
       <div class="max-w-2xl mx-auto text-center">
         <Link to={"/"} class="inline-block ">
             <img src={logo} alt="logo"
           class='w-48' /></Link>
-        <p class="text-sm mt-8 text-gray-200">At SnapPrints, we bring your creativity to life with custom T-shirt printing. Whether you're looking for personalized designs or unique apparel for special occasions, we ensure high-quality prints that stand out. SnapPrints is your go-to destination for expressing individuality through fashion. <a href='javascript:void(0)' class="text-sm font-semibold text-blue-500">Read
-            more...</a></p>
-
+      
         <ul class="flex items-center justify-center flex-wrap gap-y-3 gap-x-6 mt-8">
           <li><a href="javascript:void(0)">
             <svg xmlns="http://www.w3.org/2000/svg" class="inline w-6 h-6" viewBox="0 0 512 512">

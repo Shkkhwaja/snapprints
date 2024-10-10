@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Homepage() {
 
@@ -8,38 +9,44 @@ export default function Homepage() {
             id: "01",
             img: "https://readymadeui.com/images/product1.webp",
             title: "T-shirt",
-            amount: "299"
+            amount: "299",
+            link: "/product/1"
         },
         {
             id: "02",
             img: "https://readymadeui.com/images/product2.webp",
             title: "Polo shirt",
-            amount: "349"
+            amount: "349",
+            link: "/product/1"
         },
         {
             id: "03",
             img: "https://readymadeui.com/images/product3.webp",
             title: "Hoodie",
-            amount: "399"
+            amount: "399",
+            link: "/product/1"
         },
         {
             id: "04",
             img: "https://readymadeui.com/images/product4.webp",
             title: "Sweatshirt",
-            amount: "399"
+            amount: "399",
+            link: "/product/1"
         },
         {
             id: "05",
             img: "https://readymadeui.com/images/product5.webp",
             title: "Tank Top",
             amount: "299",
+            link: "/product/1"
             
         },
         {
             id: "06",
             img: "https://readymadeui.com/images/product6.webp",
             title: "Jacket",
-            amount: "699"
+            amount: "699",
+            link: "/product/1"
         }
     ]
 
@@ -53,7 +60,7 @@ export default function Homepage() {
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {
             categories.map((product, index) => (
-        <div key={index} class="bg-white rounded overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-all">
+        <Link to={product.link}><div key={index} class="bg-white rounded overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-all">
           <div class="w-full aspect-w-16 aspect-h-8 lg:h-80">
             <img src={product.img} alt={product.id}
               class="h-full w-full object-cover object-top" />
@@ -66,6 +73,7 @@ export default function Homepage() {
             </div>
           </div>
         </div>
+        </Link>
             ))
         }
         
