@@ -1,6 +1,13 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 export default function ProductView() {
+    useEffect(() => {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth"
+        })
+      },[])
   return (
     <div class="font-sans my-10">
             <div class="grid items-start grid-cols-1 md:grid-cols-2 p-4 gap-12 max-w-6xl mx-auto">

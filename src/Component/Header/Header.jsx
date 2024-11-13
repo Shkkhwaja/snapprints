@@ -117,61 +117,54 @@ export default function Header() {
         ) : (
           <>
             <Drawer
-              title={
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <span
-                    style={{
-                      color: "black",
-                      fontSize: "25px",
-                      letterSpacing: "2px",
-                      textAlign: "left",
-                    }}
-                  >
-                    SnapPrints...
-                  </span>
-                </div>
-              }
-              footer={
-                <div className="mt-2 py-4">
-                <ul className='border-1  border-emerald-400'>
-                  <li className='flex flex-col gap-4'>
-                    <button className="font-semibold text-[15px] border-none outline-none w-full">
-                      <Link to={"/forms/signin"} className="text-[#007bff] hover:underline">
-                        Login
-                      </Link>
-                    </button>
-                    <Link to={"/forms/signup"}>
-                      <button className="w-full px-4 py-2 text-sm rounded-sm font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]">
-                        Sign up
-                      </button>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              }
-              placement="left"
-              onClose={closeDrawer}
-              open={openMenu}
-              closeIcon={<X stroke="black" />}
-              bodyStyle={{ backgroundColor: "white", color: "black" }}
-            >
-              <Dropdown
-                menu={{
-                  items: productMenuItems, // Use items key here
-                }}
-                trigger={["click"]}
-              >
-                <a onClick={(e) => e.preventDefault()}>
-                  <Space>
-                    <h2 className="text-xl">Products</h2>
-                    <DownOutlined />
-                  </Space>
-                </a>
-              </Dropdown>
-
-              {/* Mobile view login/signup */}
-              
-            </Drawer>
+  title={
+    <div style={{ display: "flex", alignItems: "center" }}>
+      <span
+        style={{
+          color: "black",
+          fontSize: "25px",
+          letterSpacing: "2px",
+          textAlign: "left",
+        }}
+      >
+        SnapPrints...
+      </span>
+    </div>
+  }
+  footer={
+    <div className="mt-2 py-4">
+      <ul className="border-1 border-emerald-400">
+        <li className="flex flex-col gap-4">
+          <button className="font-semibold text-[15px] border-none outline-none w-full">
+            <Link to={"/forms/signin"} className="text-[#007bff] hover:underline">
+              Login
+            </Link>
+          </button>
+          <Link to={"/forms/signup"}>
+            <button className="w-full px-4 py-2 text-sm rounded-sm font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]">
+              Sign up
+            </button>
+          </Link>
+        </li>
+      </ul>
+    </div>
+  }
+  placement="left"
+  onClose={closeDrawer}
+  open={openMenu}
+  closeIcon={<X stroke="black" />}
+  bodyStyle={{ backgroundColor: "white", color: "black" }}
+>
+  <div>
+    {products.map((product, index) => (
+      <ul key={index}>
+        <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleProductClick(product)}>
+          {product}
+        </li>
+      </ul>
+    ))}
+  </div>
+</Drawer>
           </>
         )}
       </div>

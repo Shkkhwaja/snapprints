@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Checkbox, Form, Input } from "antd";
 import { AtSign, Lock} from "lucide-react";
 import {Link} from "react-router-dom"
@@ -8,6 +8,13 @@ import {Link} from "react-router-dom"
 export default function SignIn() {
 
     const [submitting, setSubmitting] = useState(false);
+    useEffect(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+      })
+    },[])
 
     // Dummy function for form submission
     const onFinish = (values) => {
