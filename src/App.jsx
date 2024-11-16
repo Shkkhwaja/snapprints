@@ -5,7 +5,7 @@ import Home from "./Component/Home/Home";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./Component/Header/Header";
 import Footer from "./Component/Footer/Footer";
-import ProductView from "./Component/Products/ProductView";
+import ProductView from "./Component/ProductView/ProductView";
 
 export default function App() {
   const location = useLocation(); // Correctly extract the location
