@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../Header/Header'
-import Homepage from '../Products/homepage'
+import Homepage from '../Products/Homepage'
 import MainSlider from '../Slider/MainSlider'
 import Footer from '../Footer/Footer'
 
