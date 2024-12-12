@@ -8,8 +8,7 @@ import Footer from "./Component/Footer/Footer";
 import ProductView from "./Component/ProductView/ProductView";
 
 export default function App() {
-  const location = useLocation(); // Correctly extract the location
-
+  const location = useLocation();
   return (
     <>
     <Header />
