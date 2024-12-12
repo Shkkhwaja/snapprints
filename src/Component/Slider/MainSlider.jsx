@@ -57,7 +57,7 @@ export default function MainSlider() {
             banner.map((item,index) => (
             <SwiperSlide key={index}>
           <Link to={item.link}>
-            <img src={item.img} className="h-[90vh] w-full" alt="Slide 1" />
+            <img src={item.img} className="md:h-[90vh] mt-[5em] w-full" alt="Slide 1" />
           </Link>
         </SwiperSlide>
         ))

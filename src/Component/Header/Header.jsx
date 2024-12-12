@@ -29,7 +29,8 @@ export default function Navbar() {
     0,
   );
   return (
-    <nav className="bg-gradient-to-r h-20 from-indigo-600 to-purple-600 shadow-lg w-full">
+    <nav className="fixed top-0 w-full h-20 bg-gradient-to-r from-white to-gray-100 shadow-lg border-2 border-green-400 z-50">
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo section */}
@@ -46,7 +47,7 @@ export default function Navbar() {
               <input
                 type="text"
                 placeholder="Search products..."
-                className="w-full px-4 py-2 rounded-lg bg-white text-white border-b-4 border-r-4 border-green-400 border-r-green-400 focus:outline-none focus:border-black focus:ring-2 focus:ring-green-500 transition-colors"
+                className="w-full px-4 py-2 rounded-lg bg-white text-white border-2 border-b-4 border-r-4 border-green-400 border-r-green-400 focus:outline-none focus:border-black focus:ring-2 focus:ring-green-500 transition-colors"
               />
               <Search className="absolute right-3 top-2.5 h-5 w-5 text-gray-400" />
             </div>
@@ -55,7 +56,7 @@ export default function Navbar() {
           {/* Desktop buttons */}
           <div className="hidden md:flex relative top-1 items-center space-x-4">
           <Link to={`/forms/signin`}>
-            <button className="px-4 py-2 text-white hover:text-black transition-colors">
+            <button className="px-4 py-2 text-black hover:text-black transition-colors">
               Sign In
             </button>
             </Link>
@@ -68,11 +69,11 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="p-2 text-white hover:text-black transition-colors"
+                className="p-2 text-black hover:text-black transition-colors"
               >
                 <ShoppingCart className="h-6 w-6" />
                 {cartItems > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-green-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-green-500 text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
                     {cartItems}
                   </span>
                 )}
@@ -83,9 +84,22 @@ export default function Navbar() {
           {/* Mobile header section */}
           <div className="md:hidden flex items-center space-x-4">
             <div className="flex items-center space-x-2">
+            <div className="relative">
+                <button
+                  onClick={() => setIsCartOpen(true)}
+                  className="p-2 text-black hover:text-green-500 transition-colors"
+                >
+                  <ShoppingCart className="h-6 w-6" />
+                  {cartItems > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-green-500 text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                      {cartItems}
+                    </span>
+                  )}
+                </button>
+              </div>
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-white hover:text-green-500 transition-colors"
+                className="text-black hover:text-green-500 transition-colors"
               >
                 {isOpen ? (
                   <X className="h-6 w-6" />
@@ -93,19 +107,7 @@ export default function Navbar() {
                   <Menu className="h-6 w-6" />
                 )}
               </button>
-              <div className="relative">
-                <button
-                  onClick={() => setIsCartOpen(true)}
-                  className="p-2 text-white hover:text-green-500 transition-colors"
-                >
-                  <ShoppingCart className="h-6 w-6" />
-                  {cartItems > 0 && (
-                    <span className="absolute -top-1 -right-1 bg-green-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                      {cartItems}
-                    </span>
-                  )}
-                </button>
-              </div>
+              
             </div>
           </div>
         </div>
