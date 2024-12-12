@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Homepage() {
 
+  
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -67,7 +68,7 @@ export default function Homepage() {
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {
             categories.map((product, index) => (
-        <Link to={product.link}><div key={index} class="bg-white rounded overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-all">
+        <Link to={`/product/${product.id}`}><div key={index} class="bg-white rounded overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-all">
           <div class="w-full aspect-w-16 aspect-h-8 lg:h-80">
             <img src={product.img} alt={product.id}
               class="h-full w-full object-cover object-top" />

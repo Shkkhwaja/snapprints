@@ -1,6 +1,10 @@
 import React, {useEffect} from 'react'
+import { useParams } from 'react-router-dom';
+
 
 export default function ProductView() {
+    const { id } = useParams();  
+
     useEffect(() => {
         window.scrollTo({
           top: 0,
@@ -28,7 +32,7 @@ export default function ProductView() {
 
                 <div class="max-lg:max-w-2xl">
                     <div>
-                        <h2 class="text-2xl font-extrabold text-gray-800">Adjective Attire | T-shirt</h2>
+                        <h2 class="text-2xl font-extrabold text-gray-800">Adjective Attire | T-shirt {id}</h2>
                         <p class="text-sm text-gray-500 mt-2">Well-Versed Commerce</p>
                     </div>
 

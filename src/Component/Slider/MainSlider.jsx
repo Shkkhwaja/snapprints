@@ -6,7 +6,9 @@ import {
   A11y,
   Autoplay,
 } from "swiper/modules";
-
+import banner1 from "../../Images/Banner/banner1.png"
+import banner2 from "../../Images/Banner/banner2.png"
+import banner3 from "../../Images/Banner/banner3.png"
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Link } from "react-router-dom";
@@ -19,34 +21,25 @@ import "swiper/css/scrollbar";
 
 export default function MainSlider() {
 
-    const imgurl = "https://static.vecteezy.com/system/resources/previews/005/675/477/non_2x/template-for-design-and-presentation-of-a-logo-or-print-on-a-black-t-shirt-your-logo-on-the-t-shirt-banner-illustration-vector.jpg"
+
     const banner = [
         
         {
             id: "01",
             link: "/collection",
-            img: imgurl
+            img: banner1
         },
         {
             id: "02",
             link: "/collection",
-            img: imgurl
+            img: banner2
         },
         {
             id: "03",
             link: "/collection",
-            img: imgurl
+            img: banner3
         },
-        {
-            id: "04",
-            link: "/collection",
-            img: imgurl
-        },
-        {
-            id: "05",
-            link: "/collection",
-            img: imgurl
-        },
+        
     ]
 
 
@@ -64,7 +57,7 @@ export default function MainSlider() {
             banner.map((item,index) => (
             <SwiperSlide key={index}>
           <Link to={item.link}>
-            <img src={item.img} className="h-screen w-full" alt="Slide 1" />
+            <img src={item.img} className="h-[90vh] w-full" alt="Slide 1" />
           </Link>
         </SwiperSlide>
         ))
