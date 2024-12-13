@@ -5,7 +5,12 @@ import Home from "./Component/Home/Home";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./Component/Header/Header";
 import Footer from "./Component/Footer/Footer";
-import ProductView from "./Component/ProductView/ProductView";
+import Tshirt from "./Component/ProductCategories/Tshirts/Tshirt";
+import Polo from "./Component/ProductCategories/Polo/Polo";
+import Hoodie from "./Component/ProductCategories/Hoodie/Hoodie";
+import Sweatshirt from "./Component/ProductCategories/Sweatshirt/Sweatshirt";
+import Customdesign from "./Component/ProductCategories/Customdesign/Customdesign";
+import Jacket from "./Component/ProductCategories/Jacket/Jacket";
 
 export default function App() {
   const location = useLocation();
@@ -16,8 +21,14 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/forms/signup" element={<SignUp />} />
         <Route path="/forms/signin" element={<SignIn />} />
-        <Route path="/product/:id" element={<ProductView />} />
+        <Route path="/product/tshirt" element={<Tshirt />} />
+        <Route path="/product/polo" element={<Polo/>} />
+        <Route path="/product/hoodie" element={<Hoodie />} />
+        <Route path="/product/sweatshirt" element={<Sweatshirt />} />
+        <Route path="/product/customdesign" element={<Customdesign />} />
+        <Route path="/product/jacket" element={<Jacket />} />
       </Routes>
+     
       <Footer /> 
     </>
   );

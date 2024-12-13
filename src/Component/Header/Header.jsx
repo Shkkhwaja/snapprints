@@ -1,6 +1,6 @@
 import { Search, ShoppingCart, Menu, X } from "lucide-react";
 import React, { useState } from "react";
-import logo from "../../Images/snapprintslogo.png"
+import logo from "../../Images/snapprintslogo.png";
 import { Link } from "react-router-dom";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,20 +26,18 @@ export default function Navbar() {
   ];
   const cartTotal = sampleCartItems.reduce(
     (total, item) => total + item.price * item.quantity,
-    0,
+    0
   );
   return (
-    <nav className="fixed top-0 w-full h-20 bg-gradient-to-r from-white to-gray-100 shadow-lg border-2 border-green-400 z-50">
-
+    <nav className="fixed top-0 w-full h-18 md:h-20 bg-gradient-to-r from-white to-gray-100 shadow-lg border-2 border-green-400 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo section */}
           <Link to={"/"}>
-          <div className="flex-shrink-0 flex items-center">
-          <img src={logo} className="h-[16em] absolute left-2"/>
-          </div>
+            <div className="flex-shrink-0 flex items-center">
+              <img src={logo} className="h-[16em] absolute left-2" />
+            </div>
           </Link>
-
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center justify-center flex-1 space-x-8">
@@ -55,16 +53,16 @@ export default function Navbar() {
 
           {/* Desktop buttons */}
           <div className="hidden md:flex relative top-1 items-center space-x-4">
-          <Link to={`/forms/signin`}>
-            <button className="px-4 py-2 text-black hover:text-black transition-colors">
-              Sign In
-            </button>
+            <Link to={`/forms/signin`}>
+              <button className="px-4 py-2 text-black hover:text-black transition-colors">
+                Sign In
+              </button>
             </Link>
 
             <Link to={`/forms/signup`}>
-            <button className="px-4 py-2 bg-green-600  rounded-none border-2  border-black text-white transition-colors">
-              Sign Up
-            </button>
+              <button className="px-4 py-2 bg-green-600  rounded-none border-2  border-black text-white transition-colors">
+                Sign Up
+              </button>
             </Link>
             <div className="relative">
               <button
@@ -84,7 +82,7 @@ export default function Navbar() {
           {/* Mobile header section */}
           <div className="md:hidden flex items-center space-x-4">
             <div className="flex items-center space-x-2">
-            <div className="relative">
+              <div className="relative">
                 <button
                   onClick={() => setIsCartOpen(true)}
                   className="p-2 text-black hover:text-green-500 transition-colors"
@@ -107,7 +105,6 @@ export default function Navbar() {
                   <Menu className="h-6 w-6" />
                 )}
               </button>
-              
             </div>
           </div>
         </div>
@@ -115,27 +112,106 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-black">
+        <div className="md:hidden bg-cyan-100 h-[90vh] w-[90vw] absolute right-0 rounded-l-[1em] font-mono">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <div className="relative mb-4">
               <input
                 type="text"
                 placeholder="Search products..."
-                className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-colors"
+                className="w-full px-4 py-2 bg-gray-50 text-white rounded-lg border-2 border-cyan-400 shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-colors"
               />
               <Search className="absolute right-3 top-2.5 h-5 w-5 text-gray-400" />
             </div>
-           <Link to={`/forms/signin`}>
-            <button className="w-full px-4 py-2 text-white hover:text-green-500 transition-colors text-left">
-              Sign In
-            </button>
-            </Link>
 
-            <Link to={`/forms/signup`}>
-            <button className="w-full px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-left">
-              Sign Up
-            </button>
-            </Link>
+            <div className="bg-white h-[66vh] w-[80vw] relative left-5 rounded-[1em] border-2 border-cyan-400 shadow-sm border-l-[7px] border-b-[7px] ">
+              <ul className="uppercase">
+                <Link to="/product/hoodie">
+                  <li className="w-full px-4 py-2 cursor-pointer hover:text-cyan-500">
+                    HOODIES & SWEATSHIRT
+                  </li>
+                </Link>
+                <hr className="border-1 border-gray-500 py-1" />
+
+                <Link to="/product/tshirt">
+                  <li className="w-full px-4 py-2 cursor-pointer hover:text-cyan-500">
+                    Printed T-Shirts
+                  </li>
+                </Link>
+                <hr className="border-1 border-gray-500 py-1" />
+
+                <Link to="/product/polo">
+                  <li className="w-full px-4 py-2 cursor-pointer hover:text-cyan-500">
+                    🌟POLO t-shirts🌟
+                  </li>
+                </Link>
+                <hr className="border-1 border-gray-500 py-1" />
+
+                <Link to="/product/sweatshirt">
+                  <li className="w-full px-4 py-2 cursor-pointer hover:text-cyan-500">
+                    Sweat shirt
+                  </li>
+                </Link>
+                <hr className="border-1 border-gray-500 py-1" />
+
+                <Link to="/product/customdesign">
+                  <li className="w-full px-4 py-2 cursor-pointer hover:text-cyan-500">
+                    custom design
+                  </li>
+                </Link>
+                <hr className="border-1 border-gray-500 py-1" />
+
+                <Link to="/product/jacket">
+                  <li className="w-full px-4 py-2 cursor-pointer hover:text-cyan-500">
+                    jackets
+                  </li>
+                </Link>
+                <hr className="border-1 border-gray-500 py-1" />
+
+                <Link to="/product/tshirt">
+                  <li className="w-full px-4 py-2 cursor-pointer hover:text-cyan-500">
+                    plan t-shirt
+                  </li>
+                </Link>
+                <hr className="border-1 border-gray-500 py-1" />
+
+                <Link to="/">
+                  <li className="w-full px-4 py-2 cursor-pointer hover:text-cyan-500">
+                    Best Sellers
+                  </li>
+                </Link>
+                <hr className="border-1 border-gray-500 py-1" />
+
+                <Link to="/">
+                  <li className="w-full px-4 py-2 cursor-pointer hover:text-cyan-500">
+                    TRACK ORDER
+                  </li>
+                </Link>
+                <hr className="border-1 border-gray-500 py-1" />
+
+                <Link to="/">
+                  <li className="w-full px-4 py-2 cursor-pointer hover:text-cyan-500">
+                    RETURN/EXCHANGE
+                  </li>
+                </Link>
+              </ul>
+            </div>
+
+            <ul className="bg-white h-[9vh] w-[80vw] relative left-5 rounded-[1em] border-2 border-cyan-400 shadow-sm border-l-[5px] border-b-[5px]  flex gap-8 top-4 px-8 py-3 ">
+              <li>
+                <Link to={`/forms/signin`}>
+                  <button className="w-full px-4 py-2 text-black hover:text-green-500 transition-colors text-center">
+                    Sign In
+                  </button>
+                </Link>
+              </li>
+              <li>
+                <Link to={`/forms/signup`}>
+                  <button className="w-full px-4 py-2 text-black hover:text-green-500 transition-colors text-left">
+                    Sign Up
+                  </button>
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       )}
@@ -150,7 +226,9 @@ export default function Navbar() {
 
       {/* Cart Drawer */}
       <div
-        className={`fixed top-0 right-0 w-full md:w-96 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${isCartOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 w-full md:w-96 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
+          isCartOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between p-4 border-b">

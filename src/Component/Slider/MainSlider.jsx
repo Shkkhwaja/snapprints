@@ -50,14 +50,14 @@ export default function MainSlider() {
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={50}
         slidesPerView={1}
-        autoplay={{ delay: 2000 }}
+        autoplay={{ delay: 4000 }}
         pagination={{ clickable: true }}
       >
         {
             banner.map((item,index) => (
             <SwiperSlide key={index}>
           <Link to={item.link}>
-            <img src={item.img} className="md:h-[90vh] mt-[5em] w-full" alt="Slide 1" />
+            <img src={item.img} className="md:h-[90vh] md:mt-[5em] mt-[4em] w-full" alt="Slide 1" />
           </Link>
         </SwiperSlide>
         ))
