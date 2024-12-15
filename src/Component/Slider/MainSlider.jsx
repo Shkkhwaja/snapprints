@@ -6,9 +6,9 @@ import {
   A11y,
   Autoplay,
 } from "swiper/modules";
-import banner1 from "../../Images/Banner/banner1.png"
+import banner3 from "../../Images/Banner/banner1.png"
 import banner2 from "../../Images/Banner/banner2.png"
-import banner3 from "../../Images/Banner/banner3.png"
+import banner1 from "../../Images/Banner/banner3.png"
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Link } from "react-router-dom";

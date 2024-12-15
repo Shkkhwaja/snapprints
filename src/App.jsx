@@ -11,6 +11,7 @@ import Hoodie from "./Component/ProductCategories/Hoodie/Hoodie";
 import Sweatshirt from "./Component/ProductCategories/Sweatshirt/Sweatshirt";
 import Customdesign from "./Component/ProductCategories/Customdesign/Customdesign";
 import Jacket from "./Component/ProductCategories/Jacket/Jacket";
+import ProductView from "./Component/ProductView/PrductView";
 
 export default function App() {
   const location = useLocation();
@@ -27,6 +28,8 @@ export default function App() {
         <Route path="/product/sweatshirt" element={<Sweatshirt />} />
         <Route path="/product/customdesign" element={<Customdesign />} />
         <Route path="/product/jacket" element={<Jacket />} />
+        <Route path="/product/:category/:id" element={<ProductView />} />
+
       </Routes>
      
       <Footer /> 
