@@ -44,7 +44,7 @@ const Sweatshirt = () => {
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center mt-8">
         {sweatshirts.map((item, index) => (
           <Link to={`/product/sweatshirt/${item.id}`} key={index}>
-            <div className="w-[160px] md:w-[300px] h-[45vh] md:h-[67vh] bg-white rounded-lg shadow-md border-2 border-black p-2 md:p-4 border-r-[7px] border-b-[7px] hover:border-green-500 transition-all">
+            <div className="w-[160px] md:w-[300px] h-[42vh] md:h-[67vh] bg-white rounded-lg shadow-md border-2 border-black p-2 md:p-4 border-r-[7px] border-b-[7px] hover:border-green-500 transition-all">
               <div className="relative">
                 <div className="absolute top-2 left-2 bg-[#00b852] text-white text-xs font-medium px-2 py-1 rounded">
                   {(
@@ -80,7 +80,7 @@ const Sweatshirt = () => {
                 </div>
 
                 <Link to="/">
-                  <div className="mt-1 md:mt-4 flex">
+                  <div className="mt-2 md:mt-4 flex">
                     <button className="flex-1 bg-black text-white py-2 text-sm font-medium hover:opacity-90 transition-opacity">
                       ADD TO CART
                     </button>
