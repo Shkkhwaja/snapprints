@@ -92,11 +92,6 @@ export default function CategoriesPage() {
                     <span className="text-xs text-gray-500">(444)</span>
                   </div>
 
-                  <div className="absolute bottom-2 right-2 flex gap-1">
-                    <div className="w-4 h-4 rounded-full bg-black "></div>
-                    <div className="w-4 h-4 rounded-full bg-white "></div>
-                    <div className="w-4 h-4 rounded-full bg-gray-200 "></div>
-                  </div>
                 </div>
 
                 <div className="p-4">

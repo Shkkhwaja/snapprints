@@ -8,8 +8,8 @@ const Polo = () => {
       id: index + 1,
       title: `Polo t-shirt ${index + 1}`,
       image: {
-        src: "https://www.snitch.co.in/cdn/shop/files/4MST2201-04-M31.jpg?v=1699959172",
-        alt: `T-shirt ${index + 1} image`,
+        src: "https://merchshop.in/wp-content/uploads/2019/06/web-designer-t-shirt-navy-blue.jpg",
+        alt: `Polo t-shirt ${index + 1} image`,
       },
       rating: 4.5,
       reviews: 444,
@@ -44,7 +44,7 @@ const Polo = () => {
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center mt-8">
         {polos.map((item, index) => (
           <Link to={`/product/polo/${item.id}`} key={index}>
-            <div className="w-[180px] md:w-[300px] bg-white rounded-lg shadow-md border-2 border-black p-4 border-r-[7px] border-b-[7px] hover:border-green-500 transition-all">
+            <div className="w-[160px] md:w-[300px] h-[45vh] md:h-[67vh] bg-white rounded-lg shadow-md border-2 border-black p-2 md:p-4 border-r-[7px] border-b-[7px] hover:border-green-500 transition-all">
               <div className="relative">
                 <div className="absolute top-2 left-2 bg-[#00b852] text-white text-xs font-medium px-2 py-1 rounded">
                   {(
@@ -69,59 +69,19 @@ const Polo = () => {
                 </div>
               </div>
 
-              <div className="mt-4">
+              <div className="mt-2">
                 <h3 className="text-gray-700 font-medium text-sm line-clamp-2">
                   {item.title}
                 </h3>
-                <div className="mt-2 flex items-center gap-2">
+                <div className="mt-1 flex items-center gap-2">
                   <p className="line-through opacity-70">
                     ₹{item.variants[0].compare_at_price}
                   </p>
                   <p className="font-bold">₹{item.variants[0].price}</p>
-                  <div className="md:px-2 flex gap-0">
-                    <div className="flex items-center justify-start gap-2 md:gap-4 relative mb-0 mx-4 ">
-                      <button
-                        data-ui="checked active"
-                        className="p-0 border border-gray-200 rounded-full transition-all duration-300 "
-                      >
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 40 40"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle cx="20" cy="20" r="20" fill="black" />
-                        </svg>
-                      </button>
-                      <button className="p-0 border border-black rounded-full transition-all duration-300 ">
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 40 40"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle cx="20" cy="20" r="20" fill="white" />
-                        </svg>
-                      </button>
-                      <button className="p-0 border border-gray-200 rounded-full transition-all duration-300 ">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          viewBox="0 0 40 40"
-                          fill="none"
-                        >
-                          <circle cx="20" cy="20" r="20" fill="gray" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
                 </div>
 
                 <Link to="/">
-                  <div className="mt-4 flex">
+                  <div className="mt-1 md:mt-4 flex">
                     <button className="flex-1 bg-black text-white py-2 text-sm font-medium hover:opacity-90 transition-opacity">
                       ADD TO CART
                     </button>
