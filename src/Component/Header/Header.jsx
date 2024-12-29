@@ -1,11 +1,12 @@
-import { Search, ShoppingCart, Menu, X } from "lucide-react";
+import { Search, ShoppingCart, Menu, X, SquareUser } from "lucide-react";
 import React, { useState } from "react";
 import logo from "../../Images/snapprintslogo.png";
 import { Link } from "react-router-dom";
-export default function Navbar() {
+export default function Navbar({profileData}) {
   const [isOpen, setIsOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems] = useState(3);
+  const [data] = useState(true);
   const sampleCartItems = [
     {
       id: 1,
@@ -53,17 +54,25 @@ export default function Navbar() {
 
           {/* Desktop buttons */}
           <div className="hidden md:flex relative top-1 items-center space-x-4">
-            <Link to={`/forms/signin`}>
-              <button className="px-4 py-2 text-black hover:text-black transition-colors">
-                Sign In
-              </button>
-            </Link>
+            {data ? (
+              <Link to={"/account/profile"}>
+                <SquareUser className="cursor-pointer"/>{" "}
+              </Link>
+            ) : (
+              <>
+                <Link to={`/forms/signin`}>
+                  <button className="px-4 py-2 text-black hover:text-black transition-colors">
+                    Sign In
+                  </button>
+                </Link>
 
-            <Link to={`/forms/signup`}>
-              <button className="px-4 py-2 bg-green-600  rounded-none border-2  border-black text-white transition-colors">
-                Sign Up
-              </button>
-            </Link>
+                <Link to={`/forms/signup`}>
+                  <button className="px-4 py-2 bg-green-600  rounded-none border-2  border-black text-white transition-colors">
+                    Sign Up
+                  </button>
+                </Link>
+              </>
+            )}
             <div className="relative">
               <button
                 onClick={() => setIsCartOpen(true)}
@@ -197,20 +206,31 @@ export default function Navbar() {
             </div>
 
             <ul className="bg-white h-[9vh] w-[80vw] relative left-5 rounded-[1em] border-2 border-cyan-400 shadow-sm border-l-[5px] border-b-[5px]  flex gap-8 top-4 px-8 py-3 ">
-              <li>
-                <Link to={`/forms/signin`}>
-                  <button className="w-full px-4 py-2 text-black hover:text-green-500 transition-colors text-center">
-                    Sign In
-                  </button>
+              {data ? (
+              <Link to={"/account/profile"}>
+                  <div className="mt-2 flex gap-3">
+                    <SquareUser />
+                    <span>Profile</span>
+                  </div>
                 </Link>
-              </li>
-              <li>
-                <Link to={`/forms/signup`}>
-                  <button className="w-full px-4 py-2 text-black hover:text-green-500 transition-colors text-left">
-                    Sign Up
-                  </button>
-                </Link>
-              </li>
+              ) : (
+                <>
+                  <li>
+                    <Link to={`/forms/signin`}>
+                      <button className="w-full px-4 py-2 text-black hover:text-green-500 transition-colors text-center">
+                        Sign In
+                      </button>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={`/forms/signup`}>
+                      <button className="w-full px-4 py-2 text-black hover:text-green-500 transition-colors text-left">
+                        Sign Up
+                      </button>
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>
